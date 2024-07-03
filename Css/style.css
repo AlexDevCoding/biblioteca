@@ -45,11 +45,17 @@ img  {
 
 li {
     list-style: none;
-    padding-left: 5px;
-    background: red;
+    padding-left: 10px;
+    background: #60a5fa;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-radius: 20px;
 }
 
-
+.material-symbols-outlined {
+    color: white;
+}
 
 
 
@@ -65,6 +71,7 @@ button {
     padding: 10px;
     width: 100%;
     border-style: none;
+    border-radius: 20px;
 }
 
 ul {
@@ -74,3 +81,12 @@ ul {
     flex-direction: column;
     gap: 20px;
 }
+
+a {
+    text-decoration: none;
+}
+
+.submenu {
+    margin-top: 40px;
+}
+
