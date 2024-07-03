@@ -8,6 +8,10 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    border-collapse: collapse;
 }
 
 aside {
@@ -90,3 +94,25 @@ a {
     margin-top: 40px;
 }
 
+table {
+    width: 100vh;
+    border-collapse: separate;
+    border-spacing: 10px 5px;
+}
+
+thead {
+    text-align: left;
+}
+
+
+body > section > table > tbody > tr > td:nth-child(7) > span
+ {
+    color: black ;
+    background: beige;
+}
+
+
+.activo {
+    display: flex;
+    gap: 10px;
+}
