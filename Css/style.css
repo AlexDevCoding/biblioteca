@@ -96,19 +96,11 @@ a {
 
 table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 10px 5px;
+    border-collapse: collapse;
 }
 
 thead {
     text-align: left;
-}
-
-
-body > section > table > tbody > tr > td:nth-child(7) > span
- {
-    color: black ;
-    background: beige;
 }
 
 
@@ -121,3 +113,16 @@ section {
     flex: 1;
     padding: 20px;
 }
+
+.edit, .delete {
+    cursor: pointer;
+    margin-top: 18px;
+    border-radius: 0px;
+    padding: 5px;
+    width: auto;
+}
+
+.delete {
+    background: red;
+}
+
