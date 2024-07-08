@@ -51,9 +51,6 @@ li {
     list-style: none;
     padding-left: 10px;
     background: #60a5fa;
-    display: flex;
-    gap: 15px;
-    align-items: center;
     border-radius: 20px;
 }
 
@@ -88,6 +85,9 @@ ul {
 
 a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .submenu {
@@ -125,4 +125,18 @@ section {
 .delete {
     background: red;
 }
+
+.cabecera {
+    position: absolute;
+    background: red;
+    width: 100%;
+    padding: 20px;
+    z-index: -1;
+}
+
+.boton-enlace {
+    cursor: pointer;
+}
+
+
 

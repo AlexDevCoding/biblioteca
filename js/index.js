@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('añadir-estudiantes-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        loadContent('agregar-estudiantes');
+    });
     document.getElementById('tablero-link').addEventListener('click', function(e) {
         e.preventDefault();
         loadContent('tablero');
@@ -34,3 +38,6 @@ function loadContent(page) {
             content.innerHTML = `<p>Error loading content: ${error}</p>`;
         });
 }
+
+
+
