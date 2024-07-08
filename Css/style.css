@@ -140,3 +140,24 @@ section {
 
 
 
+.formulario {
+    height: auto;
+    background: red;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 13px;
+    padding: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
