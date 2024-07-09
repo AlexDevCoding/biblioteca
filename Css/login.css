@@ -9,6 +9,10 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    background-image: url(../img/books-5433432_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 form {
@@ -19,25 +23,47 @@ form {
     background: #172554;
     width: 400px;
     height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: white;
     line-height: 40px;
     border-radius: 30px;
     justify-content: center;
-
 }
 
-
-input[type=text], 
-input[type=email], 
-input[type=password] {
-    width: 50%;
-    padding: 5px;
+h3 {
+    text-align: center;
 }
 
-button {
+.formulario {
+    display: flex;
+    flex-direction: column;
+    /* padding: 60px; */
+    padding-left: 40px;
+    padding-right: 40px;
     margin-top: 15px;
-    width: 20%;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    padding: 10px;
+    height: 30px;
+    display: flex;
+    margin-top: 30px;
+    height: 35px;
+}
+
+.button {
+    margin-top: 15px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+    
+}
+
+.formulario .campo:focus::placeholder,
+ .formulario .campo:focus::placeholder{
+    transform: translateY(-45%);
+    color: black;
+    transition-duration: 0.5s;
+    margin-left: 30px;
 }
