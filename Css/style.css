@@ -138,6 +138,11 @@ section {
     cursor: pointer;
 }
 
+#añadir-estudiantes-link > a {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
 
 
 .formulario {
@@ -161,3 +166,5 @@ h2 {
     text-align: center;
     margin-bottom: 30px;
 }
+
+

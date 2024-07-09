@@ -33,7 +33,7 @@ h3 {
     text-align: center;
 }
 
-.formulario {
+.formulario2 {
     display: flex;
     flex-direction: column;
     /* padding: 60px; */
@@ -60,8 +60,13 @@ input[type=password] {
     
 }
 
-.formulario .campo:focus::placeholder,
- .formulario .campo:focus::placeholder{
+.button:hover {
+    background: blue;
+    
+}
+
+.formulario2 .campo:focus::placeholder,
+ .formulario2 .campo:focus::placeholder{
     transform: translateY(-45%);
     color: black;
     transition-duration: 0.5s;
