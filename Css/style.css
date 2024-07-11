@@ -128,7 +128,7 @@ section {
 
 .cabecera {
     position: absolute;
-    background: red;
+    background: #172554;
     width: 100%;
     padding: 20px;
     z-index: -1;
@@ -147,13 +147,14 @@ section {
 
 .formulario {
     height: auto;
-    background: red;
+    background: #bfdbfe;
     width: 400px;
     display: flex;
     flex-direction: column;
     /* align-items: flex-start; */
     gap: 13px;
     padding: 40px;
+    border-radius: 20px;
 }
 
 form {
@@ -168,3 +169,33 @@ h2 {
 }
 
 
+input[type=submit] {
+    
+    padding: 8px;
+    background: #60a5fa;
+    border-style: none;
+    border-radius: 8px;
+
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel] {
+    height: 40px;
+    padding: 10px;
+}
+
+
+#opciones {
+    height: 40px;
+    padding: 5px;
+}
+
+.formulario .campo:focus::placeholder,
+ .formulario .campo:focus::placeholder{
+    transform: translateY(-45%);
+    color: black;
+    transition-duration: 0.5s;
+    margin-left: 30px;
+}
