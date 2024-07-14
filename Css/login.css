@@ -29,9 +29,6 @@ form {
     justify-content: center;
 }
 
-h3 {
-    text-align: center;
-}
 
 .formulario2 {
     display: flex;
@@ -40,6 +37,7 @@ h3 {
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 15px;
+    border-style: none;
 }
 
 input[type=text],
@@ -60,6 +58,9 @@ input[type=password] {
     
 }
 
+legend {
+    text-align: center;
+}
 .button:hover {
     background: blue;
     
