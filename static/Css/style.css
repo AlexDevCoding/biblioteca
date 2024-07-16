@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    border-collapse: collapse;
+}
+
+aside {
+    width: 250px;
+    background: #edcaff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  
+}
+img  {
+   
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.subbox {
+    position: relative;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+li {
+    list-style: none;
+    padding-left: 10px;
+    background: #60a5fa;
+    border-radius: 20px;
+}
+
+.material-symbols-outlined {
+    color: white;
+}
+
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    border-style: none;
+    border-radius: 20px;
+}
+
+ul {
+    width: 100%;
+    line-height: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu {
+    width: 50%;
+    margin-left: 20px;
+}
+.submenu {
+    margin-top: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    text-align: left;
+}
+
+
+.activo {
+    display: flex;
+    gap: 10px;
+}
+
+section {
+    flex: 1;
+    padding: 20px;
+}
+
+.edit, .delete {
+    cursor: pointer;
+    margin-top: 18px;
+    border-radius: 0px;
+    padding: 5px;
+    width: auto;
+}
+
+.delete {
+    background: red;
+}
+
+.cabecera {
+    position: absolute;
+    background: #172554;
+    width: 100%;
+    padding: 20px;
+    z-index: -1;
+}
+
+.boton-enlace {
+    cursor: pointer;
+}
+
+#añadir-estudiantes-link > a {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.formulario {
+    height: auto;
+    background: #bfdbfe;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 13px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+input[type=submit] {
+    
+    padding: 8px;
+    background: #60a5fa;
+    border-style: none;
+    border-radius: 8px;
+
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel] {
+    height: 40px;
+    padding: 10px;
+}
+
+
+#opciones {
+    height: 40px;
+    padding: 5px;
+}
+
+.formulario .campo:focus::placeholder,
+ .formulario .campo:focus::placeholder{
+    transform: translateY(-45%);
+    color: black;
+    transition-duration: 0.5s;
+    margin-left: 30px;
+}
+

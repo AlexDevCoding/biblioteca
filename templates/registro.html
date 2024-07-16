@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/Css/login.css">
+    <title>Registro</title>
+</head>
+<body>
+    <form id="registroForm" action="../app.php" method="POST">
+        <fieldset class="formulario2">
+            <legend><h3>Registro</h3></legend>
+            <input type="text" name="nombre" placeholder="Nombre" class="campo" required>
+            <input type="text" name="apellido" placeholder="Apellido" class="campo" required>
+            <input type="text" name="usuario" placeholder="Usuario" class="campo" required>
+            <input type="email" name="correo" placeholder="Correo" class="campo" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" class="campo" required>
+            <input type="submit" value="Registrar" class="button">
+        </fieldset>
+    </form>
+</body>
+</html>
+
