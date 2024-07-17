@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         echo "Usuario no encontrado";
+        
     }
 
     // Cerrar la declaración
