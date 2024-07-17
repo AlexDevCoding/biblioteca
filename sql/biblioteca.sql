@@ -12,6 +12,7 @@ CREATE TABLE estudiantes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cedula INT(8) NOT NULL,
     nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
     curso VARCHAR(100) NOT NULL,
     telefono int(11) NOT NULL
 );

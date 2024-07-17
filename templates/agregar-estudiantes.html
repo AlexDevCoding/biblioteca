@@ -42,30 +42,30 @@
     <section>
     <h2>Añadir estudiante </h2>
 
-    <form action="">
+    <form action="../registrar-estudiante.php" method="POST">
         
         <div class="formulario">
          
         
-            <input type="text" placeholder="Cédula"class="campo">
+            <input type="text" name="cedula" placeholder="Cédula"class="campo">
 
         
-            <input type="text" placeholder="Nombre" class="campo">
+            <input type="text" name="nombre" placeholder="Nombre" class="campo">
 
             
-            <input type="text" class="campo" placeholder="Apellido">
+            <input type="text" name="apellido" class="campo" placeholder="Apellido">
 
            
-            <select id="opciones" name="opciones" placeholder="curso">
-                <option value="opcion1">Seleccionar</option>
-                <option value="opcion2">Excel</option>
-                <option value="opcion3">PowerPoint</option>
-                <option value="opcion4">Canvas</option>
-                <option value="opcion5">Ofimática</option>
+            <select id="opciones" name="curso" placeholder="curso">
+                <option value="Seleccionar">Seleccionar</option>
+                <option value="Excel">Excel</option>
+                <option value="PowerPoint">PowerPoint</option>
+                <option value="Canvas">Canvas</option>
+                <option value="Ofimática">Ofimática</option>
             </select>
 
     
-        <input type="tel" placeholder="Télefono" class="campo">
+        <input type="tel" name="telefono" placeholder="Télefono" class="campo">
 
         <input type="submit" value="Agregar Estudiante">
     </div>
