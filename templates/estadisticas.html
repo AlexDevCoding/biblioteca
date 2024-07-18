@@ -7,6 +7,7 @@
     <link rel="icon" href="../static/img/file.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Panel de Estudiantes</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
     <aside>
@@ -21,33 +22,26 @@
                 <li class="t"><a href="estudiantes.html" id="estudiantes-link"><span class="material-symbols-outlined">group</span>Estudiantes</a></li>
             </ul>
             <ul class="submenu">
-                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadisticas</a></li>
+                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadísticas</a></li>
                 <li class="t"><a href="configuracion.html" id="configuracion-link"><span class="material-symbols-outlined">settings</span>Configuración</a></li>
-                <li class="t"><a href="#" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sección</a></li>
+                <li class="t"><a href="#" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sesión</a></li>
             </ul>
         </nav>
     </aside>
 
     <header class="cabecera">
-
         <nav class="menu">
-
-            <h1 style="color: white;" class="titulo2">Estadisticas</h1>
-
+            <h1 style="color: white;" class="titulo2">Estadísticas</h1>
         </nav>
-
-
     </header>
-        
-
+    
     <section id="content">
- 
-     
-
-
+        <div id="container" style="width:20%; height:400px; position: absolute;"></div>
     </section>
-    <script src="js/index.js"></script>
 
-    <script src="js/crud.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/crud.js"></script>
+   <script src="../js/graficas.js"></script>
 </body>
 </html>
+
