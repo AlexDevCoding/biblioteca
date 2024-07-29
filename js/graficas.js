@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 xAxis: {
                     categories: categories,
                     title: {
-                        text: 'Estudiantes'
-                    }
+                        text: 'Número de Estudiantes',
+                    },
                 },
                 yAxis: {
                     min: 0,
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },
                 series: [{
-                    name: 'Estudiantes',
+                    name: 'Numero de estudiantes',
                     data: counts,
                     dataLabels: {
                         enabled: true,

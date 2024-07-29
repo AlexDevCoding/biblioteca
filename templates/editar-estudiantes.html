@@ -42,8 +42,8 @@
     <section>
     <h2>Añadir estudiante </h2>
 
-    <form action="">
-        
+    <form  id="formulario" method="POST" action="../gestion_estudiantes.php">
+        <input type="hidden" id="id" name="id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>">
         <fieldset class="formulario">
          
         
@@ -55,6 +55,7 @@
             
             <input type="text" class="campo" placeholder="Apellido">
 
+            <input type="date" name="fecha" class="campo" placeholder="Fecha-de-ingreso " style="padding: 10px;">
            
             <select id="opciones" name="opciones" placeholder="curso">
                 <option value="opcion1">Seleccionar</option>
@@ -65,11 +66,12 @@
             </select>
 
     
-        <input type="tel" placeholder="Télefono" class="campo">
+        <input type="tel" placeholder="Télefono" class="campo" >
 
         <input type="submit" value="Agregar Estudiante">
     </fieldset>
     </form>
 </section>
+<script src="../js/editar-estudiantes.js"></script>
 </body>
 </html>

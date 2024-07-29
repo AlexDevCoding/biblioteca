@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estudiantes</title>
     <link rel="stylesheet" href="../static/Css/style.css">
     <link rel="icon" href="../static/img/file.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -21,7 +21,7 @@
                 <li class="t"><a href="estudiantes.html" id="estudiantes-link"><span class="material-symbols-outlined">group</span>Estudiantes</a></li>
             </ul>
             <ul class="submenu">
-                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadisticas</a></li>
+                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadísticas</a></li>
                 <li class="t"><a href="configuracion.html" id="configuracion-link"><span class="material-symbols-outlined">settings</span>Configuración</a></li>
                 <li class="t"><a href="../logout.php" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sesión</a></li>
             </ul>
@@ -29,79 +29,66 @@
     </aside>
 
     <header class="cabecera">
-
         <nav class="menu">
-
             <h1 style="color: white;" class="titulo2">Estudiantes</h1>
-
         </nav>
-
-
     </header>
 
     <section id="content">
- 
-        <table id="dataTable">
-            <thead>
-              <tr>
-                  <th>Id</th>
-                  <th>Cedula</th>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Curso</th>
-                  <th>Número de telefono</th>
-                  <th>Acción </th>
-              </tr>
-            </thead>
-    
-            <tbody>
-                <tr>
-                    <td>Alan</td>
-                    <td>Jellybean</td>
-                    <td>$3.76</td>
-                    <td>$0.87</td>
-                    <td>$0.87</td>
-                    <td>$0.87</td>
-                    <td class="activo">
-                        <a href="editar-estudiantes.html"> <button class="edit"><span class="material-symbols-outlined" id="tt">
-                            edit</a> 
-                            </span>
-                        </button><button class="delete"><span class="material-symbols-outlined" id="tt">
-                            delete
-                            </span></button></td></tr>
-              <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-                <td>$0.87</td>
-                <td>$0.87</td>
-                <td>$0.87</td>
-                <td class="activo">
-                    <a href="editar-estudiantes.html"> <button class="edit"><span class="material-symbols-outlined" id="tt">
-                        edit</a> 
-                        </span>
-                    </button><button class="delete"><span class="material-symbols-outlined" id="tt">
-                        delete
-                        </span></button></td>
-              </tr>
-              <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$0.87</td>
-                <td>$0.87</td>
-                <td>$0.87</td>
-                <td class="activo">
-                  <a href="editar-estudiantes.html"> <button class="edit"><span class="material-symbols-outlined" id="tt">
-                    edit</a> 
-                    </span>
-                    </button><button class="delete"><span class="material-symbols-outlined" id="tt">
-                        delete
-                        </span></button></td>
-              </tr>
-            </tbody>
-          </table>
+        <div id="data-container"></div>
+    </section>
 
-    <script src="../js/crud.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../listar-estudiantes.php')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('data-container');
+                    
+                    if (data.message) {
+                        container.innerHTML = `<p>${data.message}</p>`;
+                    } else {
+                        let tableHTML = `
+                            <table id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Cédula</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Curso</th>
+                                        <th>Número de Teléfono</th>
+                                        <th>Fecha de Ingreso</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>`;
+                        
+                        data.forEach(row => {
+                            tableHTML += `
+                                <tr>
+                                    <td>${row.id}</td>
+                                    <td>${row.cedula}</td>
+                                    <td>${row.nombre}</td>
+                                    <td>${row.apellido}</td>
+                                    <td>${row.curso}</td>
+                                    <td>${row.telefono}</td>
+                                    <td>${row.fecha_ingreso}</td>
+                                    <td class="activo">
+                                        <a href="editar-estudiantes.php?id=${row.id}"><button class="edit"><span class="material-symbols-outlined">edit</span></button></a>
+                                        <a href="eliminar-estudiantes.php?id=${row.id}"><button class="delete"><span class="material-symbols-outlined">delete</span></button></a>
+                                    </td>
+                                </tr>`;
+                        });
+
+                        tableHTML += '</tbody></table>';
+                        container.innerHTML = tableHTML;
+                    }
+                })
+                .catch(error => console.error('Error al cargar los datos:', error));
+        });
+    </script>
 </body>
 </html>
+
+

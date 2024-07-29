@@ -47,7 +47,7 @@
         <div class="formulario">
          
         
-            <input type="text" name="cedula" placeholder="Cédula"class="campo">
+            <input type="text" name="cedula" placeholder="Cédula"class="campo" pattern="\d{8}" title="la cedula debe contener 8 digitos" required >
 
         
             <input type="text" name="nombre" placeholder="Nombre" class="campo">
@@ -55,6 +55,12 @@
             
             <input type="text" name="apellido" class="campo" placeholder="Apellido">
 
+
+
+            <input type="tel" name="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 u 11 dígitos" required>
+
+
+            <input type="date" name="fecha" class="campo" placeholder="Fecha de ingreso " style="padding: 10px;">
            
             <select id="opciones" name="curso" placeholder="curso">
                 <option value="Seleccionar">Seleccionar</option>
@@ -65,7 +71,7 @@
             </select>
 
     
-        <input type="tel" name="telefono" placeholder="Télefono" class="campo">
+ 
 
         <input type="submit" value="Agregar Estudiante">
     </div>
