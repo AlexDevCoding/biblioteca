@@ -1,13 +1,18 @@
 <?php
 include 'config.php';
 
-
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $limit = 10; 
 $offset = ($page - 1) * $limit;
 
+// Obtener el parámetro de búsqueda
+$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
 
-$sql = "SELECT id, cedula, nombre, apellido, curso, telefono, fecha_ingreso FROM estudiantes LIMIT $limit OFFSET $offset";
+// Consulta SQL para buscar y paginar
+$sql = "SELECT id, cedula, nombre, apellido, curso, telefono, fecha_ingreso 
+        FROM estudiantes 
+        WHERE nombre LIKE '%$search%' OR apellido LIKE '%$search%' 
+        LIMIT $limit OFFSET $offset";
 $result = $conn->query($sql);
 
 $data = array();
@@ -19,8 +24,10 @@ if ($result->num_rows > 0) {
         $data[] = $row;
     }
 
-   
-    $sql_total = "SELECT COUNT(*) as total FROM estudiantes";
+    // Obtener el total de registros filtrados
+    $sql_total = "SELECT COUNT(*) as total 
+                  FROM estudiantes 
+                  WHERE nombre LIKE '%$search%' OR apellido LIKE '%$search%'";
     $result_total = $conn->query($sql_total);
     $total = $result_total->fetch_assoc()['total'];
     $total_pages = ceil($total / $limit);

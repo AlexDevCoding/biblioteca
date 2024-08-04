@@ -42,26 +42,13 @@
     <section>
     <h2>Añadir estudiante </h2>
 
-    <form action="../registrar-estudiante.php" method="POST">
-        
+    <form id="formulario-registro" action="../registrar-estudiante.php" method="POST">
         <div class="formulario">
-         
-        
-            <input type="text" name="cedula" placeholder="Cédula"class="campo" pattern="\d{8}" title="la cedula debe contener 8 digitos" required >
-
-        
+            <input type="text" name="cedula" placeholder="Cédula" class="campo" pattern="\d{8}" title="la cedula debe contener 8 digitos" required>
             <input type="text" name="nombre" placeholder="Nombre" class="campo">
-
-            
             <input type="text" name="apellido" class="campo" placeholder="Apellido">
-
-
-
             <input type="tel" name="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 u 11 dígitos" required>
-
-
             <input type="date" name="fecha" class="campo" placeholder="Fecha de ingreso " style="padding: 10px;">
-           
             <select id="opciones" name="curso" placeholder="curso">
                 <option value="Seleccionar">Seleccionar</option>
                 <option value="Excel">Excel</option>
@@ -69,13 +56,19 @@
                 <option value="Canvas">Canvas</option>
                 <option value="Ofimática">Ofimática</option>
             </select>
-
-    
- 
-
-        <input type="submit" value="Agregar Estudiante">
-    </div>
+            <input type="submit" value="Agregar Estudiante">
+        </div>
     </form>
 </section>
+
+<!-- Modal -->
+<div id="modal-registro-exitoso" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <p></p>
+    </div>
+</div>
+
+<script src="../js/agregar-estudiantes.js"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@
             <ul class="submenu">
                 <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadísticas</a></li>
                 <li class="t"><a href="configuracion.html" id="configuracion-link"><span class="material-symbols-outlined">settings</span>Configuración</a></li>
-                <li class="t"><a href="#" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sección</a></li>
+                <li class="t"><a href="#" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sesión</a></li>
             </ul>
         </nav>
     </aside>
@@ -35,33 +35,31 @@
     </header>
 
     <section>
-        <h2>Añadir estudiante</h2>
+        <h2>Editar estudiante</h2>
 
-        <form action="../editar-estudiantes.php" method="POST">
+        <form action="../editar-estudiantes.php" method="POST" id="editForm">
             <div class="formulario">
-                <input type="text" name="cedula" placeholder="Cédula" class="campo" pattern="\d{8}" title="La cédula debe contener 8 dígitos" required>
-
-                <input type="text" name="nombre" placeholder="Nombre" class="campo">
-
-                <input type="text" name="apellido" placeholder="Apellido" class="campo">
-
-                <input type="tel" name="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 o 11 dígitos" required>
-
-                <input type="date" name="fecha" placeholder="Fecha de ingreso" class="campo" style="padding: 10px;">
-
-                <select id="opciones" name="curso" class="campo">
+                <input type="hidden" name="id" id="studentId">
+                <input type="text" name="cedula" id="cedula" placeholder="Cédula" class="campo" pattern="\d{8}" title="La cédula debe contener 8 dígitos" required>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="campo" required>
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="campo" required>
+                <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 o 11 dígitos" required>
+                <input type="date" name="fecha_ingreso" id="fecha_ingreso" placeholder="Fecha de ingreso" class="campo" style="padding: 10px;" required>
+                <select id="curso" name="curso" class="campo" style="padding: 10px;" required>
                     <option value="Seleccionar">Seleccionar</option>
                     <option value="Excel">Excel</option>
                     <option value="PowerPoint">PowerPoint</option>
                     <option value="Canvas">Canvas</option>
                     <option value="Ofimática">Ofimática</option>
                 </select>
-
                 <input type="submit" value="Editar Estudiante" class="campo">
             </div>
         </form>
     </section>
 
     <script src="../js/editar-estudiantes.js"></script>
+    <script>
+       
+    </script>
 </body>
 </html>
