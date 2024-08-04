@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $apellido = $_POST['apellido'];
     $usuario = $_POST['usuario'];
     $correo = $_POST['correo'];
-    $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT); // me encripta la contraseña
+    $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT); 
 
  
     $sql_verificar_usuario = "SELECT usuario FROM usuarios WHERE usuario = ?";

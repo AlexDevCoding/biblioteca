@@ -35,59 +35,14 @@
     </header>
 
     <section id="content">
-        <div id="data-container"></div>
+        <div id="data-container" class="datos">
+            <input type="text" id="searchInput" placeholder="Buscar..." class="buscar">
+        </div>
+        
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('../listar-estudiantes.php')
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById('data-container');
-                    
-                    if (data.message) {
-                        container.innerHTML = `<p>${data.message}</p>`;
-                    } else {
-                        let tableHTML = `
-                            <table id="dataTable">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Cédula</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Curso</th>
-                                        <th>Número de Teléfono</th>
-                                        <th>Fecha de Ingreso</th>
-                                        <th>Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>`;
-                        
-                        data.forEach(row => {
-                            tableHTML += `
-                                <tr>
-                                    <td>${row.id}</td>
-                                    <td>${row.cedula}</td>
-                                    <td>${row.nombre}</td>
-                                    <td>${row.apellido}</td>
-                                    <td>${row.curso}</td>
-                                    <td>${row.telefono}</td>
-                                    <td>${row.fecha_ingreso}</td>
-                                    <td class="activo">
-                                        <a href="editar-estudiantes.php?id=${row.id}"><button class="edit"><span class="material-symbols-outlined">edit</span></button></a>
-                                        <a href="eliminar-estudiantes.php?id=${row.id}"><button class="delete"><span class="material-symbols-outlined">delete</span></button></a>
-                                    </td>
-                                </tr>`;
-                        });
-
-                        tableHTML += '</tbody></table>';
-                        container.innerHTML = tableHTML;
-                    }
-                })
-                .catch(error => console.error('Error al cargar los datos:', error));
-        });
-    </script>
+   <script src="../js/crud.js"></script>
+   
 </body>
 </html>
 

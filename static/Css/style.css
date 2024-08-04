@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url("https://code.highcharts.com/css/highcharts.css");
-@import url("https://code.highcharts.com/dashboards/css/dashboards.css");
 
-#dashboard-col-0 {
-  text-align: center;
-}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +13,23 @@ body {
     flex-direction: row;
     align-items: baseline;
     border-collapse: collapse;
+    background: #060d23;
+    color: white;
 }
+
+#dashboard-col-0 {
+    text-align: center;
+  }
+
+.datos {
+    background: rgb(11 23 57);
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    padding: 40px;
+    color: white;
+  }
+  
 
 aside {
     width: 250px;
@@ -75,11 +87,54 @@ nav {
 }
 
 button {
+    border-style: none;
+}
+
+.boton-enlace{
     padding: 10px;
     width: 100%;
     border-style: none;
     border-radius: 20px;
 }
+
+#pagination {
+    display: flex;
+    margin-top: 15px;
+}
+
+#pagination button {
+    background-color: #007bff; 
+    border: none;
+    color: white; 
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#pagination button:hover {
+    background-color: #0056b3; 
+}
+
+#pagination button:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+}
+
+#pagination .active {
+    background-color: rgb(203 60 255);
+}
+
+
+.zebra-table tbody tr:nth-child(odd) {
+    background-color: rgb(8, 16, 40); 
+}
+
+.zebra-table tbody tr:nth-child(even) {
+    background-color: rgb(11 23 57); 
+}
+
 
 ul {
     width: 100%;
@@ -113,6 +168,11 @@ thead {
     text-align: left;
 }
 
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
 
 .activo {
     display: flex;
@@ -126,7 +186,6 @@ section {
 
 .edit, .delete {
     cursor: pointer;
-    margin-top: 18px;
     border-radius: 0px;
     padding: 5px;
     width: auto;
@@ -135,6 +194,15 @@ section {
 
 .delete {
     background: red;
+}
+
+.buscar {
+    width: 60%;
+    background-color: #0b1739;
+    border-style: none;
+    border: 1px solid rgb(52, 59, 79);
+    margin-bottom: 20px;
+    color: white;
 }
 
 .cabecera {
@@ -147,6 +215,13 @@ section {
 
 .boton-enlace {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accion {
+    text-align: left;
 }
 
 #añadir-estudiantes-link > a {

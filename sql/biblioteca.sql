@@ -15,6 +15,6 @@ CREATE TABLE estudiantes (
     apellido VARCHAR(100) NOT NULL,
     curso VARCHAR(100) NOT NULL,
     telefono int(11) NOT NULL,
-    fecha  datetime NOT NULL
+    fecha_ingreso  datetime NOT NULL
 
 );

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../static/Css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" href="../static/img/file.png">
-    <title>Document</title>
+    <title>Editar Estudiante</title>
 </head>
 <body>
     <aside>
@@ -21,7 +21,7 @@
                 <li class="t"><a href="estudiantes.html" id="estudiantes-link"><span class="material-symbols-outlined">group</span>Estudiantes</a></li>
             </ul>
             <ul class="submenu">
-                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadisticas</a></li>
+                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadísticas</a></li>
                 <li class="t"><a href="configuracion.html" id="configuracion-link"><span class="material-symbols-outlined">settings</span>Configuración</a></li>
                 <li class="t"><a href="#" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sección</a></li>
             </ul>
@@ -29,49 +29,39 @@
     </aside>
 
     <header class="cabecera">
-
         <nav class="menu">
-
             <h1 style="color: white;" class="titulo2">Editar Estudiante</h1>
-
         </nav>
-
-
     </header>
 
     <section>
-    <h2>Añadir estudiante </h2>
+        <h2>Añadir estudiante</h2>
 
-    <form  id="formulario" method="POST" action="../gestion_estudiantes.php">
-        <input type="hidden" id="id" name="id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>">
-        <fieldset class="formulario">
-         
-        
-            <input type="text" placeholder="Cédula"class="campo">
+        <form action="../editar-estudiantes.php" method="POST">
+            <div class="formulario">
+                <input type="text" name="cedula" placeholder="Cédula" class="campo" pattern="\d{8}" title="La cédula debe contener 8 dígitos" required>
 
-        
-            <input type="text" placeholder="Nombre" class="campo">
+                <input type="text" name="nombre" placeholder="Nombre" class="campo">
 
-            
-            <input type="text" class="campo" placeholder="Apellido">
+                <input type="text" name="apellido" placeholder="Apellido" class="campo">
 
-            <input type="date" name="fecha" class="campo" placeholder="Fecha-de-ingreso " style="padding: 10px;">
-           
-            <select id="opciones" name="opciones" placeholder="curso">
-                <option value="opcion1">Seleccionar</option>
-                <option value="opcion2">Excel</option>
-                <option value="opcion3">PowerPoint</option>
-                <option value="opcion4">Canvas</option>
-                <option value="opcion5">Ofimática</option>
-            </select>
+                <input type="tel" name="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 o 11 dígitos" required>
 
-    
-        <input type="tel" placeholder="Télefono" class="campo" >
+                <input type="date" name="fecha" placeholder="Fecha de ingreso" class="campo" style="padding: 10px;">
 
-        <input type="submit" value="Agregar Estudiante">
-    </fieldset>
-    </form>
-</section>
-<script src="../js/editar-estudiantes.js"></script>
+                <select id="opciones" name="curso" class="campo">
+                    <option value="Seleccionar">Seleccionar</option>
+                    <option value="Excel">Excel</option>
+                    <option value="PowerPoint">PowerPoint</option>
+                    <option value="Canvas">Canvas</option>
+                    <option value="Ofimática">Ofimática</option>
+                </select>
+
+                <input type="submit" value="Editar Estudiante" class="campo">
+            </div>
+        </form>
+    </section>
+
+    <script src="../js/editar-estudiantes.js"></script>
 </body>
 </html>
