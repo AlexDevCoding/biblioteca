@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     fetch('../graficas.php')
         .then(response => response.json())
@@ -68,14 +66,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // Procesar las fechas para extraer los meses
             var meses = {};
             Object.keys(fechas).forEach(fecha => {
-                var mes = new Date(fecha).toLocaleString('default', { month: 'long' }); // Obtener el nombre del mes
+                var mes = new Date(fecha).toLocaleString('default', { month: 'long' }); 
                 if (!meses[mes]) {
                     meses[mes] = 0;
                 }
                 meses[mes] += fechas[fecha];
             });
 
-            var fechaKeys = Object.keys(meses).sort(); // Ordenar los meses
+            var fechaKeys = Object.keys(meses).sort(); 
             var fechaValues = fechaKeys.map(mes => meses[mes]);
 
             var chartContainer2 = document.getElementById('contenedor');

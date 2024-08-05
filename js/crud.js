@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let debounceTimer;
 
     function fetchData(page) {
-        const query = searchQuery ? `&search=${encodeURIComponent(searchQuery)}` : '';
+        const query = searchQuery ? `search=${encodeURIComponent(searchQuery)}` : '';
         const paginationButtons = document.querySelectorAll('.page-button');
         const deleteButtons = document.querySelectorAll('.delete');
 
         paginationButtons.forEach(button => button.disabled = true);
         deleteButtons.forEach(button => button.disabled = true);
 
-        fetch(`../listar-estudiantes.php?page=${page}${query}`)
+        fetch(`../listar-estudiantes.php?page=${page}&${query}`)
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('data-container');
@@ -21,7 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (!tableBody) {
                     container.innerHTML = `
-                        <input type="text" id="searchInput" placeholder="Buscar..." value="${searchQuery}" style="margin-bottom: 20px;" class="buscar">
+                            <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Buscar..." value="${searchQuery}" class="buscar">
+                            <span class="search-icon material-symbols-outlined">search</span>
+                        </div>
                         <table id="dataTable" class="zebra-table">
                             <thead>
                                 <tr>
@@ -92,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setupSearchFunctionality() {
         const searchInput = document.getElementById('searchInput');
+        
         searchInput.addEventListener('input', function() {
             clearTimeout(debounceTimer); 
             debounceTimer = setTimeout(() => {
