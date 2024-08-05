@@ -117,10 +117,7 @@ button {
     background-color: #0056b3; 
 }
 
-#pagination button:disabled {
-    background-color: #ccc; 
-    cursor: not-allowed;
-}
+
 
 #pagination .active {
     background-color: rgb(203 60 255);
@@ -286,7 +283,7 @@ input[type=tel] {
     margin-left: 30px;
 }
 
-/* Estilo para el modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -301,9 +298,9 @@ input[type=tel] {
 
 .modal-contenido {
     background-color: rgb(11 23 57);
-    /* margin: 15% auto; */
+
     padding: 20px;
-    /* border: 1px solid #888; */
+
     width: 80%;
     max-width: 400px;
     border-radius: 8px;
@@ -348,4 +345,26 @@ input[type=tel] {
 
 .modal-texto p {
     margin: 0;
+}
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db; 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

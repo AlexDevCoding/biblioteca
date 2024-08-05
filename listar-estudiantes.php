@@ -1,39 +1,47 @@
 <?php
 include 'config.php';
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$limit = 10; 
-$offset = ($page - 1) * $limit;
-
-// Obtener el parámetro de búsqueda
-$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
-
-// Consulta SQL para buscar y paginar
-$sql = "SELECT id, cedula, nombre, apellido, curso, telefono, fecha_ingreso 
-        FROM estudiantes 
-        WHERE nombre LIKE '%$search%' OR apellido LIKE '%$search%' 
-        LIMIT $limit OFFSET $offset";
-$result = $conn->query($sql);
-
-$data = array();
-$total_pages = 1; 
-
-if ($result->num_rows > 0) {
+function getPaginatedStudents($conn, $search, $limit, $offset) {
+    $stmt = $conn->prepare("SELECT id, cedula, nombre, apellido, curso, telefono, fecha_ingreso 
+                            FROM estudiantes 
+                            WHERE nombre LIKE ? OR apellido LIKE ?
+                            LIMIT ? OFFSET ?");
+    $search_param = "%$search%";
+    $stmt->bind_param("ssii", $search_param, $search_param, $limit, $offset);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    $data = array();
     while ($row = $result->fetch_assoc()) {
         $row["fecha_ingreso"] = isset($row["fecha_ingreso"]) ? date("d/m/Y", strtotime($row["fecha_ingreso"])) : "No disponible";
         $data[] = $row;
     }
-
-    // Obtener el total de registros filtrados
-    $sql_total = "SELECT COUNT(*) as total 
-                  FROM estudiantes 
-                  WHERE nombre LIKE '%$search%' OR apellido LIKE '%$search%'";
-    $result_total = $conn->query($sql_total);
-    $total = $result_total->fetch_assoc()['total'];
-    $total_pages = ceil($total / $limit);
-} else {
-    $data = ["message" => "No se encontraron registros."];
+    $stmt->close();
+    
+    return $data;
 }
+
+function getTotalPages($conn, $search, $limit) {
+    $stmt = $conn->prepare("SELECT COUNT(*) as total 
+                            FROM estudiantes 
+                            WHERE nombre LIKE ? OR apellido LIKE ?");
+    $search_param = "%$search%";
+    $stmt->bind_param("ss", $search_param, $search_param);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $total = $result->fetch_assoc()['total'];
+    $stmt->close();
+    
+    return ceil($total / $limit);
+}
+
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$limit = 10; 
+$offset = ($page - 1) * $limit;
+$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
+
+$data = getPaginatedStudents($conn, $search, $limit, $offset);
+$total_pages = getTotalPages($conn, $search, $limit);
 
 $conn->close();
 

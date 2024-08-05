@@ -2,111 +2,119 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
     const limit = 10; 
     const maxPageButtons = 3; 
+    let searchQuery = '';
+    let debounceTimer;
 
     function fetchData(page) {
-        fetch(`../listar-estudiantes.php?page=${page}`)
+        const query = searchQuery ? `&search=${encodeURIComponent(searchQuery)}` : '';
+        const paginationButtons = document.querySelectorAll('.page-button');
+        const deleteButtons = document.querySelectorAll('.delete');
+
+        paginationButtons.forEach(button => button.disabled = true);
+        deleteButtons.forEach(button => button.disabled = true);
+
+        fetch(`../listar-estudiantes.php?page=${page}${query}`)
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('data-container');
+                const tableBody = document.getElementById('dataTableBody');
+                
+                if (!tableBody) {
+                    container.innerHTML = `
+                        <input type="text" id="searchInput" placeholder="Buscar..." value="${searchQuery}" style="margin-bottom: 20px;" class="buscar">
+                        <table id="dataTable" class="zebra-table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Curso</th>
+                                    <th>Número de Teléfono</th>
+                                    <th>Fecha de Ingreso</th>
+                                    <th class="accion">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataTableBody"></tbody>
+                        </table>
+                        <div id="pagination"></div>
+                    `;
+                }
+
+                const tbody = document.getElementById('dataTableBody');
+                tbody.innerHTML = '';
+
                 if (data.students.length === 0) {
-                    container.innerHTML = '<p>No hay datos disponibles.</p>';
-                    return;
-                }
+                    tbody.innerHTML = '<tr><td colspan="8">No hay datos disponibles.</td></tr>';
+                } else {
+                    data.students.forEach((row, index) => {
+                        const id = (currentPage - 1) * limit + index + 1;
 
-                let tableHTML = `
-                    <input type="text" id="searchInput" placeholder="Buscar..." style="margin-bottom: 20px;" class="buscar">
-                    <table id="dataTable" class="zebra-table">
-                        <thead>
+                        tbody.innerHTML += `
                             <tr>
-                                <th>Id</th>
-                                <th>Cédula</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Curso</th>
-                                <th>Número de Teléfono</th>
-                                <th>Fecha de Ingreso</th>
-                                <th class="accion">Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>`;
-
-                data.students.forEach((row, index) => {
-             
-                    const id = (currentPage - 1) * limit + index + 1;
-
-                    tableHTML += `
-                        <tr>
-                            <td>${id}</td>
-                            <td>${row.cedula}</td>
-                            <td>${row.nombre}</td>
-                            <td>${row.apellido}</td>
-                            <td>${row.curso}</td>
-                            <td>${row.telefono}</td>
-                            <td>${row.fecha_ingreso}</td>
-                            <td class="activo">
-                                <a href="editar-estudiantes.html?id=${row.id}"><button class="edit"><span class="material-symbols-outlined">edit</span></button></a>
-                                <button class="delete" data-id="${row.id}"><span class="material-symbols-outlined">delete</span></button>
-                            </td>
-                        </tr>`;
-                });
-
-                tableHTML += '</tbody></table>';
-
-                if (data.total_pages > 1) {
-                    tableHTML += '<div id="pagination">';
-                    for (let i = 1; i <= data.total_pages; i++) {
-                        tableHTML += `<button class="page-button" data-page="${i}">${i}</button>`;
-                    }
-                    tableHTML += '</div>';
+                                <td>${id}</td>
+                                <td>${row.cedula}</td>
+                                <td>${row.nombre}</td>
+                                <td>${row.apellido}</td>
+                                <td>${row.curso}</td>
+                                <td>${row.telefono}</td>
+                                <td>${row.fecha_ingreso}</td>
+                                <td class="activo">
+                                    <a href="editar-estudiantes.html?id=${row.id}"><button class="edit"><span class="material-symbols-outlined">edit</span></button></a>
+                                    <button class="delete" data-id="${row.id}"><span class="material-symbols-outlined">delete</span></button>
+                                </td>
+                            </tr>`;
+                    });
                 }
 
-                container.innerHTML = tableHTML;
+                const pagination = document.getElementById('pagination');
+                pagination.innerHTML = '';
+                if (data.total_pages > 1) {
+                    for (let i = 1; i <= data.total_pages; i++) {
+                        pagination.innerHTML += `<button class="page-button" data-page="${i}">${i}</button>`;
+                    }
+                }
 
                 setupSearchFunctionality();
                 setupPagination(data.total_pages);
                 setupDeleteButtons(); 
+
+                paginationButtons.forEach(button => button.disabled = false);
+                deleteButtons.forEach(button => button.disabled = false);
             })
-            .catch(error => console.error('Error al cargar los datos:', error));
+            .catch(error => {
+                console.error('Error al cargar los datos:', error);
+                document.getElementById('data-container').innerHTML = '<p>Ocurrió un error al cargar los datos. Por favor, intente nuevamente.</p>';
+                paginationButtons.forEach(button => button.disabled = false);
+                deleteButtons.forEach(button => button.disabled = false);
+            });
     }
 
     function setupSearchFunctionality() {
         const searchInput = document.getElementById('searchInput');
-        const table = document.getElementById('dataTable');
-        const rows = table.querySelectorAll('tbody tr');
-
         searchInput.addEventListener('input', function() {
-            const query = searchInput.value.toLowerCase();
-            rows.forEach(row => {
-                const cells = row.getElementsByTagName('td');
-                let match = false;
-                for (let i = 0; i < cells.length - 1; i++) { 
-                    if (cells[i].innerText.toLowerCase().includes(query)) {
-                        match = true;
-                        break;
-                    }
-                }
-                row.style.display = match ? '' : 'none';
-            });
+            clearTimeout(debounceTimer); 
+            debounceTimer = setTimeout(() => {
+                searchQuery = searchInput.value.trim().toLowerCase();
+                currentPage = 1;
+                fetchData(currentPage);
+            }, 300);
         });
     }
 
     function setupPagination(totalPages) {
         const pagination = document.getElementById('pagination');
-        const pageButtons = pagination.querySelectorAll('.page-button');
-
-        pageButtons.forEach(button => {
+        pagination.querySelectorAll('.page-button').forEach(button => {
             button.addEventListener('click', function() {
                 currentPage = parseInt(button.getAttribute('data-page'));
                 fetchData(currentPage);
             });
         });
-
         updatePaginationButtons(totalPages);
     }
 
     function updatePaginationButtons(totalPages) {
-        const pagination = document.getElementById('pagination');
-        const pageButtons = pagination.querySelectorAll('.page-button');
+        const pageButtons = document.querySelectorAll('.page-button');
         
         pageButtons.forEach(button => button.style.display = 'none'); 
 
@@ -122,25 +130,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (pageNumber >= startPage && pageNumber <= endPage) {
                 button.style.display = 'inline-block';
             }
-        });
-
-    
-        pageButtons.forEach(button => {
-            button.classList.remove('active');
-            if (parseInt(button.getAttribute('data-page')) === currentPage) {
-                button.classList.add('active');
-            }
+            button.classList.toggle('active', pageNumber === currentPage);
         });
     }
 
     function setupDeleteButtons() {
-        const deleteButtons = document.querySelectorAll('.delete');
-        deleteButtons.forEach(button => {
+        document.querySelectorAll('.delete').forEach(button => {
             button.addEventListener('click', function(event) {
                 event.preventDefault(); 
                 const id = button.getAttribute('data-id');
-                const confirmDelete = confirm("¿Estás seguro de que deseas eliminar este estudiante?");
-                if (confirmDelete) {
+                if (confirm("¿Estás seguro de que deseas eliminar este estudiante?")) {
                     fetch(`../eliminar-estudiantes.php?id=${id}`, { method: 'GET' })
                         .then(response => {
                             if (response.ok) {
