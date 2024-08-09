@@ -41,12 +41,18 @@
         
 
     <section id="content">
- 
-     <div> 
-
-        <h1>cambiar imagen</h1>
-
-     </div>
+      
+        <form id="formulario-registro" action="../registrar-estudiante.php" method="POST">
+            <fieldset class="formulario">
+                <h3 style="text-align: center;">Editar administrador</h3>
+                <input type="text" name="nombre" placeholder="Nombre" class="campo">
+                <input type="text" name="apellido" class="campo" placeholder="Apellido">
+                <input type="text" name="usuario" placeholder="Usuario" class="campo">
+                <input type="email" name="correo" placeholder="Correo" class="campo">
+                <input type="password" name="contrasena" placeholder="Contraseña" class="campo" required>
+                <input type="submit" value="Editar admin" class="campo">
+            </fieldset>
+        </form>
 
 
     </section>
