@@ -24,7 +24,7 @@ body {
 .datos {
     background: rgb(11 23 57);
     position: absolute;
-    width: 80%;
+    width: auto;
     top: 10%;
     padding: 40px;
     color: white;
@@ -367,4 +367,23 @@ input[type=tel] {
     font-size: 20px; 
     color: #888; 
   
+}
+
+#form1 {
+    position: absolute;
+    top: 15%;
+    background: rgb(11, 23, 57);
+    border-style: none;
+}
+
+#form1 > input {
+    border: 1px solid rgb(52, 59, 79);
+    background: rgb(8 16 40);
+}
+
+#form1 .campo:focus::placeholder,
+ #form1 .campo:focus::placeholder{
+    transform: translateY(-45%);
+    color: white;
+   
 }
