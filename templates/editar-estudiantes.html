@@ -38,23 +38,23 @@
         <h2>Editar estudiante</h2>
 
         <form action="../editar-estudiantes.php" method="POST" id="editForm">
-            <div class="formulario">
+            <fieldset class="formulario" id="form1">
                 
                 <input type="hidden" name="id" id="studentId">
-                <input type="text" name="cedula" id="cedula" placeholder="Cédula" class="campo" pattern="\d{8}" title="La cédula debe contener 8 dígitos" required>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="campo" required>
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="campo" required>
-                <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 o 11 dígitos" required>
+                <input type="text" name="cedula" id="cedula" placeholder="Cédula" class="campo" pattern="\d{8}" title="La cédula debe contener 8 dígitos" >
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="campo" >
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="campo" >
+                <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 o 11 dígitos">
                 <input type="date" name="fecha_ingreso" id="fecha_ingreso" placeholder="Fecha de ingreso" class="campo" style="padding: 10px;" required>
-                <select id="curso" name="curso" class="campo" style="padding: 10px;" required>
+                <select id="curso" name="curso" class="campo" style="padding: 10px;" style="background: red;">
                     <option value="Seleccionar">Seleccionar</option>
                     <option value="Excel">Excel</option>
                     <option value="PowerPoint">PowerPoint</option>
                     <option value="Canvas">Canvas</option>
                     <option value="Ofimática">Ofimática</option>
                 </select>
-                <input type="submit" value="Editar Estudiante" class="campo">
-            </div>
+                <input type="submit" value="Editar Estudiante" class="campo" style="background: #edcaff; color: rgb(6, 13, 35); ">
+            </fieldset>
         </form>
     </section>
 

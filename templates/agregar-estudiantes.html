@@ -40,24 +40,25 @@
     </header>
 
     <section>
-    <h2>Añadir estudiante </h2>
+  
 
     <form id="formulario-registro" action="../registrar-estudiante.php" method="POST">
-        <div class="formulario">
+        <fieldset class="formulario" id="form1">
+            <h3 style="text-align: center; font-size: 25px;">Añadir estudiante </h3>
             <input type="text" name="cedula" placeholder="Cédula" class="campo" pattern="\d{8}" title="la cedula debe contener 8 digitos" required>
-            <input type="text" name="nombre" placeholder="Nombre" class="campo">
-            <input type="text" name="apellido" class="campo" placeholder="Apellido">
+            <input type="text" name="nombre" placeholder="Nombre" class="campo" required>
+            <input type="text" name="apellido" class="campo" placeholder="Apellido" required>
             <input type="tel" name="telefono" placeholder="Teléfono" class="campo" pattern="\d{10,11}" title="El teléfono debe contener 10 u 11 dígitos" required>
-            <input type="date" name="fecha" class="campo" placeholder="Fecha de ingreso " style="padding: 10px;">
-            <select id="opciones" name="curso" placeholder="curso">
+            <input type="date" name="fecha" class="campo" placeholder="Fecha de ingreso " style="padding: 10px; color: #888;" required>
+            <select id="opciones" name="curso" placeholder="curso" style="background: rgb(8 16 40); color: #888; border: 1px solid rgb(52, 59, 79); " required>
                 <option value="Seleccionar">Seleccionar</option>
                 <option value="Excel">Excel</option>
                 <option value="PowerPoint">PowerPoint</option>
                 <option value="Canvas">Canvas</option>
                 <option value="Ofimática">Ofimática</option>
             </select>
-            <input type="submit" value="Agregar Estudiante">
-        </div>
+            <input type="submit" value="Agregar Estudiante"  style="background: #edcaff; color: rgb(6, 13, 35);">
+        </fieldset>
     </form>
 </section>
 

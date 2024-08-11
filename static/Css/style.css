@@ -24,7 +24,7 @@ body {
 .datos {
     background: rgb(11 23 57);
     position: absolute;
-    width: auto;
+    width: 80%;
     top: 10%;
     padding: 40px;
     color: white;
@@ -387,3 +387,23 @@ input[type=tel] {
     color: white;
    
 }
+
+::placeholder {
+    color: #888;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #081028 inset;
+    -webkit-text-fill-color: rgb(174, 185, 225);
+    caret-color: #888;
+}
+input {
+    color: #888;
+}
+
+#curso {
+    background: rgb(8 16 40); 
+    color: #888; 
+    border: 1px solid rgb(52, 59, 79);
+}
+

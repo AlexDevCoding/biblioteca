@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="e">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,43 +21,39 @@
                 <li class="t"><a href="estudiantes.html" id="estudiantes-link"><span class="material-symbols-outlined">group</span>Estudiantes</a></li>
             </ul>
             <ul class="submenu">
-                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadisticas</a></li>
+                <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadísticas</a></li>
                 <li class="t"><a href="configuracion.html" id="configuracion-link"><span class="material-symbols-outlined">settings</span>Configuración</a></li>
-                <li class="t"><a href="#" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sección</a></li>
+                <li class="t"><a href="#" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sesión</a></li>
             </ul>
         </nav>
     </aside>
 
     <header class="cabecera">
-
         <nav class="menu">
-
             <h1 style="color: white;" class="titulo2">Configuración</h1>
-
         </nav>
-
-
     </header>
-        
-
+    
     <section id="content">
-      
         <form id="formulario-registro" action="../editar-administrador.php" method="POST">
             <fieldset class="formulario" id="form1">
                 <h3 style="text-align: center;">Editar administrador</h3>
-                <input type="text" name="nombre" placeholder="Nombre" class="campo">
-                <input type="text" name="apellido" class="campo" placeholder="Apellido">
-                <input type="text" name="usuario" placeholder="Usuario" class="campo">
-                <input type="email" name="correo" placeholder="Correo" class="campo">
-                <input type="password" name="contrasena" placeholder="Contraseña" class="campo" >
-                <input type="submit" value="Editar admin" class="campo" style="background: #edcaff;">
+                <input type="hidden" name="id" id="usuario-id">
+        
+                <input type="text" name="nombre" placeholder="Nombre" class="campo" id="nombre" autocomplete="off">
+                <input type="text" name="apellido" class="campo" placeholder="Apellido" id="apellido" autocomplete="off">
+                <input type="text" name="usuario" placeholder="Usuario" class="campo" id="usuario" autocomplete="off">
+                <input type="email" name="correo" placeholder="Correo" class="campo" id="correo" autocomplete="off">
+                <input type="password" name="contrasena" placeholder="Nueva Contraseña" class="campo" id="contrasena" autocomplete="new-password">
+
+        
+                <input type="submit" value="Editar admin" class="campo" style="background: #edcaff; color: rgb(6, 13, 35);">
             </fieldset>
         </form>
-
-
+        
+        
     </section>
-    <script src="js/index.js"></script>
 
-    <script src="js/crud.js"></script>
+    <script src="../js/editar-administrador.js"></script>
 </body>
 </html>
