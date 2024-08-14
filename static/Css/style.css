@@ -33,7 +33,7 @@ body {
 
 aside {
     width: 250px;
-    background: #edcaff;
+    background: rgb(8, 16, 40);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,10 @@ aside {
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
-  
+    border-color: rgb(11, 23, 57);
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    box-shadow: rgba(1, 5, 17, 0.3) 0px 8px 28px 0px;
 }
 img  {
    
@@ -67,7 +70,7 @@ img  {
 li {
     list-style: none;
     padding-left: 10px;
-    background: #60a5fa;
+ 
     border-radius: 20px;
 }
 
@@ -95,6 +98,7 @@ button {
     width: 100%;
     border-style: none;
     border-radius: 20px;
+    background: #edcaff;
 }
 
 #pagination {
@@ -204,7 +208,7 @@ section {
 
 .cabecera {
     position: absolute;
-    background: #172554;
+    background: #0b1739;
     width: 100%;
     padding: 20px;
     z-index: -1;
@@ -407,3 +411,72 @@ input {
     border: 1px solid rgb(52, 59, 79);
 }
 
+aside nav .t a.active {
+    color: white; 
+   
+    border-radius: 10px;
+    background: #060D23;
+}
+
+aside nav .t a:hover {
+    color: white;
+    font-weight: bold;
+
+}
+
+
+aside nav .t a {
+    color: #00aaff;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.estadisticas-mayor {
+    display: flex;
+    column-gap: 50px;
+    position: absolute;
+    top: 10%;
+    flex-wrap: wrap; 
+    row-gap: 20px;
+}
+
+.estadisticas {
+    width: 400px;
+    height: 130px;
+    background: rgb(11 23 57);
+    border-radius: 20px;
+    padding: 20px;
+    line-height: 40px;
+    color: white;
+}
+
+.estadisticas  i  {
+   display: flex;
+   color: rgb(174, 185, 225);
+}
+
+.estudiantes-estadisticas {
+    font-size: 18px;
+   
+}
+
+#linea {
+    width: 850px;
+    height: 500px;
+}
+
+#circulo {
+    height: 500px;
+}
+
+
+
+.estadisticas-importantes {
+    width:600px; 
+    height:400px; 
+    fill: white; 
+    top: 10%; 
+    padding: 25px; 
+    background: rgb(11 23 57); 
+    border-radius: 20px;
+}

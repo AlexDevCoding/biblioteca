@@ -24,7 +24,7 @@
             <ul class="submenu">
                 <li class="t"><a href="estadisticas.html" id="estadisticas-link"><span class="material-symbols-outlined">monitoring</span>Estadísticas</a></li>
                 <li class="t"><a href="configuracion.html" id="configuracion-link"><span class="material-symbols-outlined">settings</span>Configuración</a></li>
-                <li class="t"><a href="../logout.php" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sesión</a></li>
+                <li class="t"><a href="../logout.php" id="cerrar-link"><span class="material-symbols-outlined">logout</span>Cerrar Sección</a></li>
             </ul>
         </nav>
     </aside>
@@ -36,17 +36,23 @@
     </header>
     
     <section id="content">
-       
-        <div id="container" style="width:30%; height:400px; position: absolute; fill: white; top: 10%; padding: 25px; background: rgb(11 23 57); border-radius: 20px; "></div>
+       <div class="estadisticas-mayor">
+        <div class="estadisticas-importantes" id="container"></div>
     
 
-        <div id="contenedor" style=" width: 30%; height:400px; position: absolute; left: 50%; background: rgb(11 23 57); ;padding: 25px; top: 10%; border-radius: 20px; margin-left: 50px;"></div>
+        <div class="estadisticas-importantes" id="contenedor" ></div>
 
+        <div class="estadisticas-importantes" id="courses-chart"></div>
+        <div class="estadisticas-importantes" id="total-students-chart"></div>
+    </div>
+
+
+    
     </section>
 
 
    <script src="../js/graficas.js"></script>
-  
+   <script src="../js/index.js"></script>
 
 </body>
 </html>

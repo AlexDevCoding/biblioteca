@@ -10,10 +10,10 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     .then(response => response.json())
     .then(data => {
         if (data.status === 'error') {
-            // Mostrar modal con el mensaje de error
+           
             showModal('Error', data.message);
         } else {
-            // Redirigir a la página de inicio
+         
             window.location.href = 'index.html';
         }
     })

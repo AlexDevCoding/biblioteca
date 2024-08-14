@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2024 a las 16:15:27
+-- Tiempo de generación: 14-08-2024 a las 03:46:12
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -42,9 +42,7 @@ CREATE TABLE `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id`, `cedula`, `nombre`, `apellido`, `curso`, `telefono`, `fecha_ingreso`) VALUES
-(3, 12572653, 'Juan', 'Martinez', 'Canvas', '04244669978', '2024-01-25'),
-(5, 12572655, 'Luis', 'Fernandez', 'PowerPoint', '04244669980', '2024-02-15'),
-(6, 12572656, 'Laura', 'Perez', 'Excel', '04244669981', '2024-02-25'),
+(6, 12572656, 'Laura', 'Perez', 'PowerPoint', '4244669981', '2024-02-25'),
 (7, 12572657, 'Carlos', 'Ramirez', 'Canvas', '04244669982', '2024-03-05'),
 (8, 12572658, 'Sofia', 'Castillo', 'Ofimática', '04244669983', '2024-03-15'),
 (9, 12572659, 'Pedro', 'Vargas', 'PowerPoint', '04244669984', '2024-03-25'),
@@ -93,7 +91,11 @@ INSERT INTO `estudiantes` (`id`, `cedula`, `nombre`, `apellido`, `curso`, `telef
 (53, 96894811, 'asdasd', 'asdasd', 'PowerPoint', '0424167864', '2024-01-01'),
 (54, 31480481, 'Josue', 'Henriquez', 'PowerPoint', '04243164809', '2024-01-01'),
 (55, 31480220, 'miguel', 'ruiz', 'Canvas', '04243164917', '2024-01-01'),
-(56, 31480210, 'Josue', 'Henriquez', 'Excel', '04243164917', '2024-01-01');
+(56, 31480210, 'Josue', 'Henriquez', 'Excel', '04243164917', '2024-01-01'),
+(57, 31485052, 'alexander', 'herniques', 'Excel', '04243164971', '2024-02-01'),
+(58, 31485051, 'asdasd', 'asdasdasd', 'Excel', '04243164970', '2024-01-01'),
+(59, 31485050, 'alexander', 'herniques', 'Excel', '04243164971', '2024-09-01'),
+(60, 31485020, 'sadasd', 'asdasdasd', 'Excel', '04243164960', '2024-08-01');
 
 -- --------------------------------------------------------
 
@@ -115,7 +117,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `usuario`, `correo`, `contrasena`) VALUES
-(6, 'josue', 'henriquez', 'zona gamers', 'henriquezjosue384@gmail.com', '$2y$10$oRTr99A4tTB8OnJx991JaO0ugkjeqP1AuOCt4kTTlRD2HLTnDBAA6'),
+(6, 'josue', 'henriquez', 'zona gamers', 'henriquezjosue384@gmail.com', '$2y$10$OgUJhAM7/K3dVUAc7IRbQOwMdpiMkoV6xJPWLgM863BuUWvODGvYa'),
 (7, 'josue', 'henriquez', 'zona gamersasdsad', 'henriquezjosue384213@gmail.com', '$2y$10$BvK39Jawwk1/67VVdGIxeeV/sKLh2iu0c7mn.SkTgvN6KzUgbJFv2'),
 (8, 'sadsad', 'Henriquez', 'explosion544', 'henriquezjosue3845@gmail.com', '$2y$10$pukr4e70/38J57NxHE24Ke5VnXffQtfXKDy4CnxeewFKV6h2.APjK');
 
@@ -143,7 +145,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

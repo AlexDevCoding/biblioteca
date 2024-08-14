@@ -3,13 +3,13 @@ session_start();
 include 'config.php';
 
 if (!isset($_SESSION['id'])) {
-    header("Location: templates/login.html"); // Redirigir a la página de login si no hay sesión activa
+    header("Location: templates/login.html"); 
     exit();
 }
 
-$id = $_SESSION['id']; // Obtener el ID del usuario logueado
+$id = $_SESSION['id']; 
 
-// Obtener los datos del usuario desde la base de datos
+
 $sql = "SELECT nombre, apellido, usuario, correo FROM usuarios WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
