@@ -486,6 +486,10 @@ footer {
     align-items: center;
 }
 
+footer p {
+    margin-left: 70px;
+}
+
 .git-hub {
     color: #888;
     background: #000000;
@@ -500,3 +504,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     padding: 4px;
 }
+
+@media (max-width: 1580px) {
+    #linea {
+        display: none;
+    }
+}
+
