@@ -348,8 +348,6 @@ input[type=tel] {
     margin: 0;
 }
 
-
-
 .search-container {
     position: relative;
     display: flex;
@@ -386,7 +384,6 @@ input[type=tel] {
  #form1 .campo:focus::placeholder{
     transform: translateY(-45%);
     color: white;
-   
 }
 
 ::placeholder {
@@ -466,8 +463,6 @@ aside nav .t a {
     height: 500px;
 }
 
-
-
 .estadisticas-importantes {
     width:600px; 
     height:400px; 
@@ -503,6 +498,5 @@ footer {
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
-
     padding: 4px;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-08-2024 a las 06:48:12
+-- Tiempo de generación: 21-08-2024 a las 17:11:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -42,7 +42,6 @@ CREATE TABLE `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id`, `cedula`, `nombre`, `apellido`, `curso`, `telefono`, `fecha_ingreso`) VALUES
-(6, 12572656, 'Laura', 'Perez', 'PowerPoint', '4244669981', '2024-02-25'),
 (7, 12572657, 'Carlos', 'Ramirez', 'Canvas', '04244669982', '2024-03-05'),
 (8, 12572658, 'Sofia', 'Castillo', 'Ofimática', '04244669983', '2024-03-15'),
 (9, 12572659, 'Pedro', 'Vargas', 'PowerPoint', '04244669984', '2024-03-25'),
