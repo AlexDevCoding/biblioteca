@@ -70,14 +70,12 @@ img  {
 li {
     list-style: none;
     padding-left: 10px;
- 
     border-radius: 20px;
 }
 
-.material-symbols-outlined {
-    color: white;
+.ti {
+    font-size: 24px;
 }
-
 
 
 nav {
@@ -87,18 +85,6 @@ nav {
     height: 100%;
     align-items: center;
   
-}
-
-button {
-    border-style: none;
-}
-
-.boton-enlace{
-    padding: 10px;
-    width: 100%;
-    border-style: none;
-    border-radius: 20px;
-    background: #edcaff;
 }
 
 #pagination {
@@ -120,7 +106,6 @@ button {
 #pagination button:hover {
     background-color: #0056b3; 
 }
-
 
 
 #pagination .active {
@@ -191,6 +176,8 @@ section {
     padding: 5px;
     width: auto;
     background: #60a5fa;
+    border-style: none;
+    color: white;
 }
 
 .delete {
@@ -219,16 +206,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 40px;
+    border-radius: 20px;
+    background: #edcaff;
+    border-style: none;
 }
 
 .accion {
     text-align: left;
-}
-
-#añadir-estudiantes-link > a {
-    text-align: center;
-    display: flex;
-    justify-content: center;
 }
 
 
@@ -300,6 +285,10 @@ input[type=tel] {
     background-color: rgba(0,0,0,0.4);
 }
 
+#modal-registro-exitoso > div > div.modal-icono.icono-error {
+    background: rgb(4 8 21);
+}
+
 .modal-contenido {
     background-color: rgb(11 23 57);
 
@@ -320,13 +309,15 @@ input[type=tel] {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .cerrar:hover,
 .cerrar:focus {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
+    
 }
 
 .modal-icono {

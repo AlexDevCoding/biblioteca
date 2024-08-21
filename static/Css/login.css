@@ -50,6 +50,7 @@ input[type=password] {
     display: flex;
     margin-top: 30px;
     height: 35px;
+    border-style: none;
 }
 
 .button {
