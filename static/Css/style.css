@@ -498,6 +498,11 @@ footer {
     padding: 5px;
 }
 .git-hub:hover {
-    color: #4078c0; /* Color de GitHub */
+    color: #4078c0; 
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+
+    padding: 4px;
+}

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2024 a las 03:46:12
+-- Tiempo de generación: 21-08-2024 a las 06:48:12
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,7 +95,21 @@ INSERT INTO `estudiantes` (`id`, `cedula`, `nombre`, `apellido`, `curso`, `telef
 (57, 31485052, 'alexander', 'herniques', 'Excel', '04243164971', '2024-02-01'),
 (58, 31485051, 'asdasd', 'asdasdasd', 'Excel', '04243164970', '2024-01-01'),
 (59, 31485050, 'alexander', 'herniques', 'Excel', '04243164971', '2024-09-01'),
-(60, 31485020, 'sadasd', 'asdasdasd', 'Excel', '04243164960', '2024-08-01');
+(60, 31485020, 'sadasd', 'asdasdasd', 'Excel', '04243164960', '2024-08-01'),
+(61, 27820278, 'jose', 'acosta', 'PowerPoint', '04243164918', '2024-01-02'),
+(62, 27820261, 'jose', 'acosta', 'Excel', '04243164918', '2024-01-01'),
+(63, 27820250, 'jose', 'acosta', 'PowerPoint', '04243164918', '2024-01-01'),
+(64, 27820480, 'jose', 'acosta', 'PowerPoint', '04243164918', '2024-01-01'),
+(65, 27820210, 'jose', 'acosta', 'Excel', '04243164918', '2024-01-02'),
+(66, 27820240, 'jose', 'acosta', 'PowerPoint', '04243164918', '2024-01-01'),
+(67, 27820220, 'jose', 'acosta', 'Excel', '04243164918', '2024-01-01'),
+(68, 27820101, 'jose', 'acosta', 'Excel', '04243164918', '2024-01-01'),
+(69, 27820201, 'jose', 'acosta', 'PowerPoint', '04243164918', '2024-01-01'),
+(70, 27820358, 'jose', 'acosta', 'PowerPoint', '04243164918', '2024-01-01'),
+(71, 27820352, 'jose', 'acosta', 'PowerPoint', '04243164918', '2024-01-01'),
+(72, 27820228, 'jose', 'acosta', 'Excel', '04243164918', '2024-01-01'),
+(73, 27820489, 'jose', 'acosta', 'Excel', '04243164918', '2024-08-01'),
+(74, 27820110, 'jose', 'acosta', 'Excel', '04243164310', '2024-08-19');
 
 -- --------------------------------------------------------
 
@@ -145,7 +159,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
