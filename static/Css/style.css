@@ -46,6 +46,7 @@ aside {
     border-width: 0px 1px 0px 0px;
     border-style: solid;
     box-shadow: rgba(1, 5, 17, 0.3) 0px 8px 28px 0px;
+    z-index: 2;
 }
 img  {
    
@@ -168,6 +169,11 @@ th, td {
 section {
     flex: 1;
     padding: 20px;
+}
+
+
+.activo button i {
+    font-size: 30px;
 }
 
 .edit, .delete {
@@ -471,3 +477,27 @@ aside nav .t a {
     background: rgb(11 23 57); 
     border-radius: 20px;
 }
+
+footer {
+    top: 95%;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: #0b1739;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.git-hub {
+    color: #888;
+    background: #000000;
+    border-radius: 5px;
+    padding: 5px;
+}
+.git-hub:hover {
+    color: #4078c0; /* Color de GitHub */
+}
+

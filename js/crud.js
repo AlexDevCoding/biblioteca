@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     container.innerHTML = `
                             <div class="search-container">
                             <input type="text" id="searchInput" placeholder="Buscar..." value="${searchQuery}" class="buscar">
-                            <span class="search-icon material-symbols-outlined">search</span>
+                            <i class="search-icon ti ti-search"></i>
                         </div>
                         <table id="dataTable" class="zebra-table">
                             <thead>
@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <td>${row.telefono}</td>
                                 <td>${row.fecha_ingreso}</td>
                                 <td class="activo">
-                                    <a href="editar-estudiantes.html?id=${row.id}"><button class="edit"><span class="material-symbols-outlined">edit</span></button></a>
-                                    <button class="delete" data-id="${row.id}"><span class="material-symbols-outlined">delete</span></button>
+                                    <a href="editar-estudiantes.html?id=${row.id}"><button class="edit"><i class="ti ti-pencil"></i></button></a>
+                                    <button class="delete" data-id="${row.id}"><i class="ti ti-trash"></i></button>
                                 </td>
                             </tr>`;
                     });
