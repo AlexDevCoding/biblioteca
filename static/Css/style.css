@@ -196,7 +196,6 @@ section {
     border-style: none;
     border: 1px solid rgb(52, 59, 79);
     margin-bottom: 20px;
-    color: white;
 }
 
 .cabecera {
@@ -253,8 +252,9 @@ input[type=submit] {
     background: #60a5fa;
     border-style: none;
     border-radius: 8px;
-
+    transition-duration: 0.5s;
 }
+
 
 input[type=text],
 input[type=email],
@@ -505,9 +505,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 4px;
 }
 
+input[type="submit"]:hover {
+    background-color: white !important; 
+}
+
 @media (max-width: 1580px) {
-    #linea {
+    #linea, #courses-chart, #total-students-chart {
         display: none;
     }
+    #data-container {
+        width: auto;
+
+    }
+  
 }
 

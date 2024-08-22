@@ -9,11 +9,18 @@
 <body>
     <form id="registroForm" action="../app.php" method="POST">
         <fieldset class="formulario2">
-            <legend><h3>Registro</h3></legend>
+            <div class="logo">
+                
+            <img src="../static/img/file.png" alt="" style="width: 80px;"> <legend><h3>Registro</h3></legend></div>
+            <label for="">Nombre</label>
             <input type="text" name="nombre" placeholder="Nombre" class="campo" required>
+            <label for="">Apellido</label>
             <input type="text" name="apellido" placeholder="Apellido" class="campo" required>
+            <label for="">Usuario</label>
             <input type="text" name="usuario" placeholder="Usuario" class="campo" required>
+            <label for="">Correo</label>
             <input type="email" name="correo" placeholder="Correo" class="campo" required>
+            <label for="">Contraseña</label>
             <input type="password" name="contrasena" placeholder="Contraseña" class="campo" required>
             <input type="submit" value="Registrar" class="button">
             <a href="login.html" style="color: rosybrown;">iniciar seccion</a>

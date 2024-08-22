@@ -21,7 +21,7 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #172554;
-    width: 400px;
+    width: 390px;
   
     color: white;
     line-height: 40px;
@@ -31,6 +31,9 @@ form {
 
 }
 
+input {
+    color: #888;
+}
 
 .formulario2 {
     display: flex;
@@ -46,11 +49,16 @@ input[type=text],
 input[type=email],
 input[type=password] {
     padding: 10px;
-    height: 30px;
     display: flex;
-    margin-top: 30px;
-    height: 35px;
+    background: rgb(8 16 40);
+    height: 36px;
     border-style: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #081028 inset;
+    -webkit-text-fill-color: rgb(174, 185, 225);
+    caret-color: #888;
 }
 
 .button {
@@ -58,60 +66,38 @@ input[type=password] {
     height: 30px;
     border-radius: 10px;
     border-style: none;
-    
+    background: #60a5fa;
+    color: rgb(6, 13, 35);
+    transition-duration: 0.5s;
+  
 }
 
 legend {
     text-align: center;
 }
 .button:hover {
-    background: blue;
+    background-color: white;
+  
     
 }
 
-.formulario2 .campo:focus::placeholder,
+/* .formulario2 .campo:focus::placeholder,
  .formulario2 .campo:focus::placeholder{
     transform: translateY(-45%);
-    color: black;
+    color: white;
     transition-duration: 0.5s;
     margin-left: 30px;
-}
+} */
 
 a {
     color: antiquewhite;
 }
 
 
-#modal {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-

@@ -10,8 +10,12 @@
 <body>
     <form id="loginForm" action="../login.php" method="POST">
         <fieldset class="formulario2">
-            <legend><h3>Login</h3></legend>
+            <div class="logo">
+                
+                <img src="../static/img/file.png" alt="" style="width: 80px;"> <legend><h3>Login</h3></legend></div>
+            <label for="">Usuario</label>
             <input type="text" name="usuario" id="usuario" placeholder="Usuario" class="campo" required>
+            <label for="">Contraseña</label>
             <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" class="campo" required>
             <input type="submit" value="Iniciar sesión" class="button">
         </fieldset>
