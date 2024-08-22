@@ -215,7 +215,13 @@ section {
     border-radius: 20px;
     background: #edcaff;
     border-style: none;
+    transition-duration: 0.5s;
 }
+
+.boton-enlace:hover {
+    background: white;
+}
+
 
 .accion {
     text-align: left;
@@ -495,9 +501,11 @@ footer p {
     background: #000000;
     border-radius: 5px;
     padding: 5px;
+    transition-duration: 0.5s;
 }
 .git-hub:hover {
-    color: #4078c0; 
+    color: black;
+    background: white;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -508,6 +516,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="submit"]:hover {
     background-color: white !important; 
 }
+
 
 @media (max-width: 1580px) {
     #linea, #courses-chart, #total-students-chart {

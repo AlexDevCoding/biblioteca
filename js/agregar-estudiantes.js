@@ -28,20 +28,19 @@ function mostrarModal(title, message, type) {
 
     const modalContent = document.querySelector(".modal-contenido");
 
-
     let icon = "";
     let iconClass = "";
 
     if (type === "success") {
-        icon = "check_circle";
+        icon = "ti ti-circle-check"; 
         iconClass = "icono-exito"; 
     } else if (type === "error") {
-        icon = "error";
+        icon = "ti ti-alert-circle"; 
         iconClass = "icono-error"; 
     }
 
     modalContent.innerHTML = `
-        <div class="modal-icono ${iconClass}"><span class="material-symbols-outlined">${icon}</span></div>
+        <div class="modal-icono ${iconClass}"><i class="${icon}"></i></div>
         <div class="modal-texto">
             <h3>${title}</h3>
             <p>${message}</p>
