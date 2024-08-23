@@ -494,7 +494,16 @@ footer {
 }
 
 footer p {
-    margin-left: 70px;
+    color: #888;
+    display: inline-flex;
+}
+
+.items {
+    color: white;
+}
+
+.items:hover {
+    color: #60a5fa;
 }
 
 .git-hub {
