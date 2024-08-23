@@ -166,3 +166,11 @@ p {
 .importante:hover {
     color: #60a5fa;
 }
+
+#modal > div > div.modal-icono.icono-exito {
+    background: #38a169;
+}
+
+#modal > div > div.modal-icono.icono-error {
+    background: none;
+}

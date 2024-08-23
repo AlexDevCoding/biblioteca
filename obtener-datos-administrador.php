@@ -10,14 +10,28 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id']; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $usuario = $_POST['usuario'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
 
-  
+
+    $sql = "SELECT id FROM usuarios WHERE usuario = ? AND id != ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("si", $usuario, $id);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        echo "El nombre de usuario ya está en uso.";
+        $stmt->close();
+        $conn->close();
+        exit();
+    }
+    $stmt->close();
+
+
     $sql = "SELECT contrasena FROM usuarios WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
@@ -26,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->fetch();
     $stmt->close();
 
-  
+ 
     if (empty($contrasena)) {
         $contrasena_hash = $contrasena_actual;
     } else {
@@ -49,4 +63,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-

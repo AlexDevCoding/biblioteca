@@ -518,6 +518,19 @@ input[type="submit"]:hover {
     background-color: white !important; 
 }
 
+#modal1 {
+    display: block;
+   
+}
+
+#cerrar2 {
+    transform: translate(0px, -9px);
+}
+
+#modal1 > p > div.modal-icono.icono-error {
+    background: rgb(4 8 21);
+}
+
 
 @media (max-width: 1580px) {
     #linea, #courses-chart, #total-students-chart {
