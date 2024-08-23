@@ -322,6 +322,7 @@ input[type=tel] {
     font-size: 28px;
     font-weight: bold;
     margin-left: 20px;
+    transform: translate(0px, -22px);
 }
 
 .cerrar:hover,

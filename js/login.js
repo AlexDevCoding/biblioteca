@@ -11,7 +11,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     .then(data => {
         if (data.status === 'error') {
            
-            showModal('Error', data.message);
+            showModal('Inconveniente', data.message);
         } else {
          
             window.location.href = 'index.html';
