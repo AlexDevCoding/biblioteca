@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-image: url(../img/WhatsApp\ Image\ 2024-08-22\ at\ 1.28.58\ PM.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #172554;
+    width: 390px;
+  
+    color: white;
+    line-height: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    padding-bottom: 50px;
+
+}
+
+input {
+    color: #888;
+}
+
+.formulario2 {
+    display: flex;
+    flex-direction: column;
+    /* padding: 60px; */
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 15px;
+    border-style: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    padding: 10px;
+    display: flex;
+    background: rgb(8 16 40);
+    height: 36px;
+    border-style: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #081028 inset;
+    -webkit-text-fill-color: rgb(174, 185, 225);
+    caret-color: #888;
+}
+
+.button {
+    margin-top: 15px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+    background: #60a5fa;
+    color: rgb(6, 13, 35);
+    transition-duration: 0.5s;
+  
+}
+
+legend {
+    text-align: center;
+}
+.button:hover {
+    background-color: white;
+  
+    
+}
+
+/* .formulario2 .campo:focus::placeholder,
+ .formulario2 .campo:focus::placeholder{
+    transform: translateY(-45%);
+    color: white;
+    transition-duration: 0.5s;
+    margin-left: 30px;
+} */
+
+a {
+    color: antiquewhite;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: rgb(4 8 21);
+    padding: 20px;
+    width: 350px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    left: 40%
+}
+
+.close {
+    color: #aaa;
+
+    font-size: 28px;
+    font-weight: bold;
+    transform: translate(10px, -22px);
+    padding: 5px;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-icono {
+    color: white;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.modal-texto {
+    width: 80%;
+}
+
+.modal-texto h3 {
+    color: #38a169;
+}
+
+p {
+    color: white;
+}
+
+.importante {
+    transition: 0.5s;
+}
+
+.importante:hover {
+    color: #60a5fa;
+}
+
+#modal > div > div.modal-icono.icono-exito {
+    background: #38a169;
+}
+
+#modal > div > div.modal-icono.icono-error {
+    background: none;
+}

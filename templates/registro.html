@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/Css/login.css">
+    <link rel="icon" href="../static/img/file.png">
+    <link rel="stylesheet" href="../static/webfont/tabler-icons-outline.css">
+    <title>Registro</title>
+</head>
+<body>
+    <form id="registroForm" action="../app.php" method="POST">
+        <fieldset class="formulario2">
+            <div class="logo">
+                
+            <img src="../static/img/file.png" alt="" style="width: 80px;"> <legend><h3>Registro</h3></legend></div>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" placeholder="Nombre" class="campo" required>
+            <label for="">Apellido</label>
+            <input type="text" name="apellido" placeholder="Apellido" class="campo" required>
+            <label for="">Usuario</label>
+            <input type="text" name="usuario" placeholder="Usuario" class="campo" required>
+            <label for="">Correo</label>
+            <input type="email" name="correo" placeholder="Correo" class="campo" required>
+            <label for="">Contraseña</label>
+            <input type="password" name="contrasena" placeholder="Contraseña" class="campo" required>
+            <input type="submit" value="Registrar" class="button">
+            <span style="color: #888; font-size: 15px;">¿Tienes una cuenta? <a href="login.html" class="importante" style="text-decoration: none; font-weight: 500;">Inicia Sección</a> </span>
+        </fieldset>
+    </form>
+    <div id="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-icono icono-error"><i class="ti ti-alert-circle" style="font-size: 26px;"></i></div>
+ 
+            <div class="modal-texto">
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p></div>
+            <span id="modalClose" class="close">&times;</span>
+        </div> 
+
+    <script src="../js/registro.js"></script>
+
+</body>
+</html>
+
